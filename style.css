@@ -1,0 +1,94 @@
+    <style>
+        html, body{
+            height: 100%;
+        }
+
+         body{
+            background-color: rgb(255, 255, 255);
+
+        } 
+   
+        .cont{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 170px;
+        }
+
+        .board{
+            background-color: rgb(255, 255, 255);
+            width: 350px;
+            height: 300px;
+            position: fixed;
+            display: grid;
+            grid-template-rows: repeat(3,1fr);
+            grid-template-columns: repeat(3,1fr);
+            margin-top: 200px;
+        }
+
+        .cell{
+            border-bottom: 5px solid black;
+            border-right: 5px solid black;
+            font-size: 50px;
+            text-align: center; 
+            line-height: 95px;
+            user-select: none;
+
+        }
+
+        .cell:nth-child(3n){
+            border-right: none;
+        }
+
+        .cell:nth-child(n+7){
+            border-bottom: none;
+        }
+
+        .cell.winning {
+        background-color: green;
+        color: white;
+        }
+        .heading{
+            font-size: 50px;
+            color: rgb(255, 255, 255);
+            background-color: rebeccapurple;
+            padding: 20px;
+            width: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 70vh;
+            animation: tilt 6s 1;
+        }
+        
+        @keyframes tilt {
+  0% {
+    transform: rotate(5deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(30);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(30);
+  }
+}
+
+    </style>
